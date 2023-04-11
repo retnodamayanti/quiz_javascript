@@ -7,32 +7,37 @@ var score = window.localStorage.getItem("curr_marks");
 
 finalScore.textContent = `YOUR FINAL SCORE: ${score}`;
 
-var scoreBoard = JSON.stringify(window.localStorage)
-scoreBoard = scoreBoard.replace("{", "");
-scoreBoard = scoreBoard.replace("}", "");
-scoreBoard = scoreBoard.replace(/:/g, "   👉   ");
-scoreBoard = scoreBoard.replace(/"/g, "");
-scoreBoard = scoreBoard.split(",")
-console.log(scoreBoard)
+;
 
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
-
-    var initial = document.querySelector("#initial-input").value;
+    submitBtn.disabled=true;
+    var initial = document.querySelector("#initial-input").value.trim();
+    if (!initial || initial.length <= 0){
+        initial = "Guest";
+    }
     window.localStorage.setItem(initial, score);
-        
+    renderScoreBoard();
     });
 
 
+
 function renderScoreBoard(){
-    console.log(scoreBoard)
-    for (var i = 0; i < scoreBoard.length; i++){
+    var scoreBoard = JSON.stringify(window.localStorage)
+    scoreBoard = scoreBoard.replace("{", "");
+    scoreBoard = scoreBoard.replace("}", "");
+    scoreBoard = scoreBoard.replace(/:/g, "   👉   ");
+    scoreBoard = scoreBoard.replace(/"/g, "");
+    scoreBoard = scoreBoard.split(",")
+
+    divScore.innerHTML = "";
+    for (var i = 1; i < scoreBoard.length; i++){
     var entry = document.createElement("li");
     entry.appendChild(document.createTextNode(scoreBoard[i]));
     divScore.appendChild(entry);
     }
 }
-renderScoreBoard();
+
 
 // renderLastRegistered();
 

@@ -1,34 +1,21 @@
-<!-- 3 HTML FIle
-1. Landing Page
-    - JavaScript 1 
-    1 button, this button will start the quiz, once it clicked, it will go to quiz page
-2. Quiz Page
-    JavaScript 2
-    1. Timer start
-    2. Question presented
-
-    {quiz: 
-    }
-
- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <div id="choices"></div>
-    <!-- <header>
-        <h1>View Highscores</h1>
-        <h2>Time: </h2>
+    <header>
+        <section>
+            <h3>Coding Quiz Challenge</h3>
+            <p>Try to Answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds.</p>
+            <a href="./quiz/quiz.html"><button id="start-button">Start</button></a>
+        </section>
     </header>
-    <div>
-        <p id="question"></p>
-        <ol id="options"></ol>
-    </div> -->
-    <script src="./assets/script.js"></script>
+<script src="./quiz/quiz.js"></script>    
+<!-- <script src="./landing.js"></script> -->
 </body>
 </html>
