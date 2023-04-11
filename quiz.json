@@ -1,0 +1,18 @@
+{[
+    {
+        "question": "Commonly used data types DO NOT Include:",
+        "mcq": ["strings", "booleans", "alerts", "numbers"],
+        "correctAnswer": "alerts"    
+    },
+    {   
+        "question": "Commonly used data types DO NOT Include:",
+        "mcq": ["strings", "booleans", "alerts", "numbers"],
+        "correctAnswer": "alerts"
+        
+    },
+    {
+        "question": "Commonly used data types DO NOT Include:",
+        "mcq": ["strings", "booleans", "alerts", "numbers"],
+        "correctAnswer": "alerts"
+    }
+]}
