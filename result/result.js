@@ -12,6 +12,7 @@ finalScore.textContent = `YOUR FINAL SCORE: ${score}`;
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
     submitBtn.disabled=true;
+    window.localStorage.removeItem("curr_marks")
     var initial = document.querySelector("#initial-input").value.trim();
     if (!initial || initial.length <= 0){
         initial = "Guest";
@@ -31,30 +32,9 @@ function renderScoreBoard(){
     scoreBoard = scoreBoard.split(",")
 
     divScore.innerHTML = "";
-    for (var i = 1; i < scoreBoard.length; i++){
+    for (var i = 0; i < scoreBoard.length; i++){
     var entry = document.createElement("li");
     entry.appendChild(document.createTextNode(scoreBoard[i]));
     divScore.appendChild(entry);
     }
 }
-
-
-// renderLastRegistered();
-
-// function displayMessage(type, message) {
-//   msgDiv.textContent = message;
-//   msgDiv.setAttribute("class", type);
-// }
-
-// function renderLastRegistered() {
-//   var email = localStorage.getItem("email");
-//   var password = localStorage.getItem("password");
-
-//   if (!email || !password) {
-//     alert("Error");
-//     return;
-//   }
-
-//   userEmailSpan.textContent = email;
-//   userPasswordSpan.textContent = password;
-// }
